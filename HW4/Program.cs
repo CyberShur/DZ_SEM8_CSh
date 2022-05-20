@@ -2,6 +2,7 @@
 
 int[,] matrix1 = new int[3, 3];
 int[,] matrix2 = new int[3, 1];
+
 FillArray(matrix1);
 FillArray(matrix2);
 PrintArray(matrix1);
@@ -16,8 +17,9 @@ int[,] ResultMatrix(int[,] matrix1, int[,] matrix2)
     {
         return matrix1;
     }
-
+    
     int[,] resultMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(0)];
+
     for (int i = 0; i < matrix1.GetLength(0); i++)
     {
         for (int j = 0; j < matrix2.GetLength(1); j++)
