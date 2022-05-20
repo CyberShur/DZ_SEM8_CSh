@@ -31,7 +31,6 @@ int[,] SortArray(int[,] inputArray)
             temp = inputArray[i,j];
             inputArray[i,j] = inputArray[tempRow,tempCollomn];
             inputArray[tempRow,tempCollomn] = temp;
-            
         }
     }
     return inputArray;
