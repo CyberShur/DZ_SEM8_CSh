@@ -8,30 +8,29 @@ SortArray(array);
 Console.WriteLine();
 PrintArray(array);
 
-
 int[,] SortArray(int[,] inputArray)
 {
     int temp = 0;
         
     for (int i = 0; i < inputArray.GetLength(0); i++)
     {
-        int indexMinimalRow = i;
-        int indexMinimalCollomn = 0;
+        int tempRow = i;
+        int tempCollomn = 0;
         for (int j = 0; j < inputArray.GetLength(1) - 1; j++)
         {   
-            indexMinimalRow = i;
-            indexMinimalCollomn = j;
+            tempRow = i;
+            tempCollomn = j;
             for (int k = j + 1; k < inputArray.GetLength(1); k++)
             {
-                if(inputArray[i,k] < inputArray[indexMinimalRow,indexMinimalCollomn])
+                if(inputArray[i,k] < inputArray[tempRow,tempCollomn])
                 {
-                    indexMinimalRow = i;
-                    indexMinimalCollomn = k;
+                    tempRow = i;
+                    tempCollomn = k;
                 }
             }
             temp = inputArray[i,j];
-            inputArray[i,j] = inputArray[indexMinimalRow,indexMinimalCollomn];
-            inputArray[indexMinimalRow,indexMinimalCollomn] = temp;
+            inputArray[i,j] = inputArray[tempRow,tempCollomn];
+            inputArray[tempRow,tempCollomn] = temp;
             
         }
     }
