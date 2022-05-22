@@ -11,7 +11,6 @@ PrintArray(array);
 int[,] SortArray(int[,] inputArray)
 {
     int temp = 0;
-        
     for (int i = 0; i < inputArray.GetLength(0); i++)
     {
         int tempRow = i;
