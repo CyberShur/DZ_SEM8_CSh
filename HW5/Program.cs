@@ -2,12 +2,11 @@
 Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента. */
 
 
-int[,,] array = new int[4, 3, 3];
+int[,,] array = new int[3, 3, 3];
 
 FillArray(array);
 PrintArray(array);
 
-    
 void FillArray(int[,,] collection)
 {
     for(int i = 0; i < collection.GetLength(0); i++)
@@ -16,7 +15,28 @@ void FillArray(int[,,] collection)
         {
             for (int k = 0; k < collection.GetLength(2); k++)
             {
-                collection[i, j, k] = new Random().Next(10, 100);
+                bool found = false;
+                while (!found)
+                {
+                    int temp = new Random().Next(10, 100);
+                    for(int l = 0; l < collection.GetLength(0); l++)
+                    {
+                        for(int m = 0; m < collection.GetLength(1); m++)
+                        {
+                            for (int n = 0; n < collection.GetLength(2); n++)
+                            {
+                                if (temp == collection[i, j, k])
+                                {
+                                    found = true;
+                                }
+                                else
+                                {
+                                    collection[i, j, k] = temp;
+                                }  
+                            }
+                        }
+                    }             
+                }
             }
         }
     }
@@ -30,10 +50,13 @@ void PrintArray(int[,,] inputArray)
         {
             for (int k = 0; k < inputArray.GetLength(2); k++)
             {
-                Console.Write($"индекс [{i}{j}{k}] эллемент {inputArray[i, j, k]}, ");  // {massiv[i, j, k]}[{i},{j},{k}]
+                Console.Write($"[{i}{j}{k}] {inputArray[i, j, k]} "); 
             }
             Console.WriteLine();
         }
         Console.WriteLine();
     }
 }
+
+
+
