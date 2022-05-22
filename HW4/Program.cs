@@ -1,15 +1,15 @@
 ﻿/* Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц. */
 
-int[,] matrix1 = new int[3, 3];
-int[,] matrix2 = new int[3, 1];
+int[,] fearstMatrix = new int[3, 3];
+int[,] secondMatrix = new int[3, 3];
 
-FillArray(matrix1);
-FillArray(matrix2);
-PrintArray(matrix1);
+FillArray(fearstMatrix);
+FillArray(secondMatrix);
+PrintArray(fearstMatrix);
 Console.WriteLine();
-PrintArray(matrix2);
+PrintArray(secondMatrix);
 Console.WriteLine();
-PrintArray(ResultMatrix(matrix1, matrix2));
+PrintArray(ResultMatrix(fearstMatrix, secondMatrix));
 
 int[,] ResultMatrix(int[,] matrix1, int[,] matrix2)
 {
