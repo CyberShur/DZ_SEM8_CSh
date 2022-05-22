@@ -16,27 +16,27 @@ void FillArray(int[,,] collection)
             for (int k = 0; k < collection.GetLength(2); k++)
             {
                 bool found = false;
+                int temp;
                 while (!found)
                 {
-                    int temp = new Random().Next(10, 100);
+                    found = false;
+                    temp = new Random().Next(10, 100);
                     for(int l = 0; l < collection.GetLength(0); l++)
                     {
                         for(int m = 0; m < collection.GetLength(1); m++)
                         {
                             for (int n = 0; n < collection.GetLength(2); n++)
                             {
-                                if (temp == collection[i, j, k])
+                                if (temp == collection[l, m, n])
                                 {
                                     found = true;
                                 }
-                                else
-                                {
-                                    collection[i, j, k] = temp;
-                                }  
+                                collection[i, j, k] = temp;  
                             }
                         }
-                    }             
+                    }         
                 }
+                   
             }
         }
     }
