@@ -3,9 +3,9 @@
 
 int[,,] array = new int[3, 3, 3];
 
-PrintArray(CreateArray(array.GetLength(0), array.GetLength(1), array.GetLength(2)));
+PrintArray(FillArray(array.GetLength(0), array.GetLength(1), array.GetLength(2)));
 
-int[,,] CreateArray(int i, int j, int k)
+int[,,] FillArray(int i, int j, int k)
 {
     int[,,] array = new int[i, j, k];
     int minNumber = 0;
